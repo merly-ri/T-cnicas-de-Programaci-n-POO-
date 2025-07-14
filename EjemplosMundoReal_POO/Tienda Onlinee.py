@@ -84,3 +84,4 @@ if __name__ == "__main__":
 
     # Mostrar stock actualizado
     tienda.mostrar_productos()
+
