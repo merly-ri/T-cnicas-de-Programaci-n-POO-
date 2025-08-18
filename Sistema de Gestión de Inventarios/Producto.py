@@ -43,18 +43,18 @@ class Inventario:
     def agregar_producto(self, producto):
         for p in self.productos:
             if p.get_id() == producto.get_id():
-                print("⚠️ Error: El ID ya existe en el inventario.")
+                print(" Error: El ID ya existe en el inventario.")
                 return
         self.productos.append(producto)
-        print("✅ Producto añadido correctamente.")
+        print(" Producto añadido correctamente.")
 
     def eliminar_producto(self, id_producto):
         for p in self.productos:
             if p.get_id() == id_producto:
                 self.productos.remove(p)
-                print("✅ Producto eliminado correctamente.")
+                print(" Producto eliminado correctamente.")
                 return
-        print("⚠️ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     def actualizar_producto(self, id_producto, nueva_cantidad=None, nuevo_precio=None):
         for p in self.productos:
@@ -63,24 +63,24 @@ class Inventario:
                     p.set_cantidad(nueva_cantidad)
                 if nuevo_precio is not None:
                     p.set_precio(nuevo_precio)
-                print("✅ Producto actualizado correctamente.")
+                print(" Producto actualizado correctamente.")
                 return
-        print("⚠️ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     def buscar_por_nombre(self, nombre_buscar):
         resultados = [p for p in self.productos if nombre_buscar.lower() in p.get_nombre().lower()]
         if resultados:
-            print("🔎 Resultados de la búsqueda:")
+            print(" Resultados de la búsqueda:")
             for p in resultados:
                 print(p)
         else:
-            print("⚠️ No se encontraron productos con ese nombre.")
+            print(" No se encontraron productos con ese nombre.")
 
     def mostrar_todos(self):
         if not self.productos:
-            print("📦 El inventario está vacío.")
+            print(" El inventario está vacío.")
         else:
-            print("\n📋 Inventario completo:")
+            print("\n Inventario completo:")
             for p in self.productos:
                 print(p)
 
@@ -140,10 +140,10 @@ def menu():
             inventario.mostrar_todos()
 
         elif opcion == "6":
-            print("👋 Saliendo del sistema...")
+            print(" Saliendo del sistema...")
             break
         else:
-            print("⚠️ Opción no válida. Intente nuevamente.")
+            print(" Opción no válida. Intente nuevamente.")
 
 
 # ==============================
